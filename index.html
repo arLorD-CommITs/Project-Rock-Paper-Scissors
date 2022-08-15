@@ -8,6 +8,51 @@
     </head>
     <body>
         <script>
+            /*
+     Algorithm for Rock Paper Scissors
+
+        1. Create function getComputerChoice. 
+           This will generate a String value "Rock", "Paper" "Scissors"
+           for the computer. It's random. DONE
+
+        2. Create function that plays the round. 
+           Will compare input of user from getComputerChoice.
+           Then output a string on who won the round. Will use
+           conditional statement for this. This will have 2 parameters,
+           once for the user input, and the other for getComputerChoice
+            - Make sure to acknowledge case sensitivity for user's input.
+
+        3. Make sure to return the results of your functions. Console log
+           is just for testing.
+
+
+                
+
+            */
+            
+            function getComputerChoice(){
+                let computerChoiceRandom = Math.floor(Math.random() * 3 ) + 1
+                let computerChoiceString = ""
+              
+                switch (computerChoiceRandom) {
+                    case 1:
+                        computerChoiceString = "Rock"
+                        break
+                    case 2:
+                        computerChoiceString = "Paper"
+                        break
+                    case 3:
+                        computerChoiceString = "Scissors"
+                        break
+                }
+
+                return computerChoiceString
+                
+            }
+
+        
+            
+
             
         </script>
     </body>
