@@ -27,6 +27,10 @@
     3. Make sure to return the results of your functions. Console log
        is just for testing.
 
+    4. Write a new function called game(). This will count the number of tries
+    user has. Let him have 5, we can use a loop for this one. console.log
+    the results as well as the winner of each game
+
 
             
 
@@ -80,7 +84,9 @@
 
         }
         
-        console.log(playRound(playerSelection, computerSelection))
+        console.log(`Player: ${playerSelection.toUpperCase()} 
+Computer: ${computerSelection} 
+Result: ${playRound(playerSelection, computerSelection)}`)
 
         function startRound(){
             console.log(playRound(playerSelection, computerSelection))
