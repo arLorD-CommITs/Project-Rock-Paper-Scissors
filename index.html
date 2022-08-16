@@ -54,7 +54,8 @@
 
         function playRound(playerSelection, computerSelection) {
             
-
+            computerSelection = computerSelection.toString()
+            playerSelection = playerSelection.toUpperCase()
             if (playerSelection === computerSelection) {
                 console.log('It\'s a tie!')
             } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
@@ -71,6 +72,12 @@
                 console.log('You Won! Scissors beats Paper')
 
             }
+        }
+
+        function startRound(){
+            let userChoice = prompt('Please choose your input.','Rock, Paper or Scissors?')
+            playRound(userChoice, getComputerChoice())
+            
         }
 
         
