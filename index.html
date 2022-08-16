@@ -56,28 +56,30 @@
             
             computerSelection = computerSelection.toString()
             playerSelection = playerSelection.toUpperCase()
+            let result = ""
             if (playerSelection === computerSelection) {
-                console.log('It\'s a tie!')
+                result = 'It\'s a tie!'
             } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-                console.log('You Won! Rock beats Scissors')
+                result = 'You Won! Rock beats Scissors'
             } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-                console.log('You Lose! Paper beats Rock')
+                result = 'You Lose! Paper beats Rock'
             } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-                console.log('You Lose! Scissors beats Paper')
+                result = 'You Lose! Scissors beats Paper'
             } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-                console.log('You Won! Paper beats Rock')
+                result = 'You Won! Paper beats Rock'
             } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-                console.log('You Lose! Rock Beats Scissors')
+                result = 'You Lose! Rock Beats Scissors'
             } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-                console.log('You Won! Scissors beats Paper')
-
+                result = 'You Won! Scissors beats Paper'
             }
+
+            return result
+
         }
 
         function startRound(){
             let userChoice = prompt('Please choose your input.','Rock, Paper or Scissors?')
-            playRound(userChoice, getComputerChoice())
-            
+            console.log(playRound(userChoice, getComputerChoice()))
         }
 
         
