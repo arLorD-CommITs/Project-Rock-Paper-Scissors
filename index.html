@@ -36,8 +36,8 @@
 
         */
 
-        let playerSelection = prompt('Please choose your input.','Rock, Paper or Scissors?')
-        const computerSelection = getComputerChoice()
+        
+        //const computerSelection = getComputerChoice()
 
         function getComputerChoice() {
             let computerChoiceRandom = Math.floor(Math.random() * 3) + 1
@@ -61,8 +61,8 @@
 
         function playRound(playerSelection, computerSelection) {
             
-            computerSelection = computerSelection.toString()
-            playerSelection = playerSelection.toUpperCase()
+            computerSelection = computerSelection
+            playerSelection = playerSelection
             let result = ""
             if (playerSelection === computerSelection) {
                 result = 'It\'s a tie!'
@@ -81,17 +81,65 @@
             }
 
             return result
-
         }
-        
-        console.log(`Player: ${playerSelection.toUpperCase()} 
-Computer: ${computerSelection} 
-Result: ${playRound(playerSelection, computerSelection)}`)
 
+        function game() {
+            
+            let winLoseText = ""
+            let playerSelection
+            let computerChoice = ""
+            let userWinCount = 0, computerWinCount = 0
+
+            for(i = 5; i > userWinCount && i > computerWinCount;){
+                
+                playerSelection = prompt('Please choose your input.','Rock, Paper or Scissors?').toUpperCase()
+                computerChoice = getComputerChoice()
+                winLoseText = playRound(playerSelection, computerChoice)
+                console.log(`Player Choice: ${playerSelection} 
+Computer Choice: ${computerChoice} 
+Result: ${winLoseText}`)
+
+// This is the code for determining wins, I could've used boolean, wonder how would that have turned out
+
+                if (winLoseText.slice(0, 7) === 'You Won'){
+                    ++userWinCount
+                    console.warn("Your Score: " + userWinCount)
+                    console.error("Computer's Score: " + computerWinCount)
+                } else if (winLoseText.slice(0, 8) === 'You Lose') {
+                    ++computerWinCount
+                    console.warn("Your Score: " + userWinCount)
+                    console.error("Computer's Score: " + computerWinCount)
+                } else {
+                    console.warn("Your Score: " + userWinCount)
+                    console.error("Computer's Score: " + computerWinCount)
+                }
+
+            }
+
+            if (userWinCount === computerWinCount) {
+                    alert("Will you look at that. It's a majestic tie! Reload the page to have another go.")
+            } else if (userWinCount > computerWinCount) {
+                    alert("You Won! Great Job! Reload the page to have another go.")
+            } else {
+                    alert("You lose. Better luck next time. Reload the page to have another go.")
+            }
+        }
+
+
+
+
+
+        
+
+
+
+
+
+/* The start function I created
         function startRound(){
             console.log(playRound(playerSelection, computerSelection))
         }
-
+*/
         
 
 
